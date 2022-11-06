@@ -37,7 +37,7 @@ const Categories = () => {
   return (
     <div className=" shadow-md bg-white">
       <div
-        className={`2xl:container mx-auto lg:max-w-[95%]   text-sm overflow-x-auto flex sm:px-5  lg:justify-center ${
+        className={`2xl:container mx-auto lg:max-w-[95%] md:w-[100%]   text-sm overflow-x-auto flex sm:px-5   lg:justify-center ${
           locale === "en" && "space-x-7"
         } ${locale==="ar" && "tracking-wide "}`}
       >

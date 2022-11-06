@@ -67,7 +67,7 @@ const LatestNews = () => {
             <span className="font-bold">آخر الأخبار</span>
           )}
         </button>
-        <div className={` overflow-x-auto border-b-2 text-sm sm:py-4 md:py-0 border-b-primary w-full ${locale==="en" && "space-x-5"}`}>
+        <div className={` overflow-x-auto border-b-2 text-sm sm:py-4 lg:py-2 border-b-primary w-full ${locale==="en" && "space-x-5"}`}>
           {categories.map((category, i) => {
             return (
               <button
