@@ -36,7 +36,7 @@ const Sidbar = () => {
         <div
           className={` ${
             openSidebar ? "left-0 " : "-left-full"
-          } top-0 left-0 w-[50vw] shadow-2xl border-transparent bg-white z-[110] fixed h-[100vh] overflow-y-auto transition-all duration-300 ease-in-out`}
+          } top-0 left-0 w-[63vw] shadow-2xl border-transparent bg-white z-[110] fixed h-[100vh] overflow-y-auto transition-all duration-300 ease-in-out`}
         >
           <div className="bg-primary">
             <div className={`flex  ${locale=== "en" ? "justify-end" : "justify-start"}`} >
@@ -47,11 +47,11 @@ const Sidbar = () => {
                 <CloseIcon className="w-7  text-[#f55]" />
               </button>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center pb-3">
               {locale === "en" ? (
                 <Link href="/">
                   <a className="pr-3">
-                    <Image height={40} width={180} src={logo} alt="" />
+                    <Image height={40} width={160} src={logo} alt="" />
                   </a>
                 </Link>
               ) : (

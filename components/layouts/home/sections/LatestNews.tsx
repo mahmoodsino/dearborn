@@ -59,8 +59,15 @@ const LatestNews = () => {
 
   return (
     <div>
-      <div className=" flex justify-between mt-5 whitespace-nowrap">
-        <div className={` overflow-x-auto border-b-2 text-sm border-b-primary w-full ${locale==="en" && "space-x-5"}`}>
+      <div className=" flex sm:flex-col md:flex-row sm:justify-end sm:items-end md:justify-between mt-5 whitespace-nowrap">
+      <button className="bg-primary sm:block w-[150px] md:hidden text-white font-medium px-4 py-3 ">
+          {locale === "en" ? (
+            <span>LATEST NEWS</span>
+          ) : (
+            <span className="font-bold">آخر الأخبار</span>
+          )}
+        </button>
+        <div className={` overflow-x-auto border-b-2 text-sm sm:py-4 md:py-0 border-b-primary w-full ${locale==="en" && "space-x-5"}`}>
           {categories.map((category, i) => {
             return (
               <button
@@ -68,14 +75,14 @@ const LatestNews = () => {
                 key={i}
                 className={`uppercase ${
                   category.id === selectedCategory?.id && "text-[#00b342]"
-                } ${locale === "ar" && "ml-7  text-[15px]"}`}
+                } ${locale === "ar" && "ml-7  text-[15px] "}`}
               >
                 {category.name}
               </button>
             );
           })}
         </div>
-        <button className="bg-primary text-white font-medium px-4 py-3 ">
+        <button className="bg-primary sm:hidden md:block text-white font-medium px-4 py-3 ">
           {locale === "en" ? (
             <span>LATEST NEWS</span>
           ) : (

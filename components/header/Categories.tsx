@@ -4,6 +4,7 @@ import { CategoriesAtom, CategoriesType, getCategories } from "../../helper";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 
 export const selectedCAtegoryAtom = atom<CategoriesType>({
@@ -31,30 +32,28 @@ const Categories = () => {
 
   const handelCategory = (category: CategoriesType) => {
     setSelectedCategory(category);
-    localStorage.setItem("categry",JSON.stringify(category))
-    push({
-      pathname: "/category",
-      query: { category: encodeURI(category.slug) },
-    });
   };
 
   return (
     <div className=" shadow-md bg-white">
       <div
-        className={`2xl:container mx-auto lg:max-w-[95%]   text-sm overflow-x-auto flex md:justify-start lg:justify-center ${
+        className={`2xl:container mx-auto lg:max-w-[95%]   text-sm overflow-x-auto flex sm:px-5  lg:justify-center ${
           locale === "en" && "space-x-7"
         } ${locale==="ar" && "tracking-wide "}`}
       >
         {categories.map((category, i) => {
           return (
-            <button
+            <Link  key={i} href={`/category?category=${category.slug}`}>
+            
+            <a
             style={category.id===selectedCategory.id ? {borderBottom:`4px solid ${selectedCategory.color}`,color:`${selectedCategory.color}`} : {}}
               onClick={() => handelCategory(category)}
               key={i}
               className={`font-bold   py-4  ${locale === "ar" && "ml-10"}`}
             >
               {category.name}
-            </button>
+            </a>
+            </Link>
           );
         })}
       </div>

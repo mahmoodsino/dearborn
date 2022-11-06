@@ -17,7 +17,7 @@ const LatsetCard = ({post}:Props) => {
         <img
         style={{objectFit:"cover"}}
 
-          className="lg:h-[239px]  w-full  "
+          className="lg:h-[239px] sm:h-[139px]  w-full  "
           src={post?.img}
           alt=""
         />
@@ -31,7 +31,7 @@ const LatsetCard = ({post}:Props) => {
       <span className="block sm:text-sm md:text-sm text-gray1  mt-1">
         {post?.created_at}
       </span>
-      <span className={` block sm:text-md  ${locale === "ar" && "text-base"}`}>
+      <span className={` block sm:hidden md:block sm:text-md  ${locale === "ar" && "text-base"}`}>
         {post?.short_description}
       </span>
     </a>

@@ -99,10 +99,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="whitespace-nowrap fixed w-full top-0 z-[100] h-[129px] ">
-      <div className="bg-primary ">
+    <div className="whitespace-nowrap fixed w-full top-0 z-[100] h-[129px]  ">
+      <div className="bg-primary sm:px-2 md:px-0 ">
         <div className="2xl:container mx-auto md:px-3 xl:px-40 2xl:px-56 flex items-center justify-between  text-white">
-          <div className="flex  items-center  ">
+          <div className="flex  items-center sm:py-2 md:py-0 ">
             <button
               onClick={() => setOpenSidebar(!openSidebar)}
               className="md:hidden sm:block mr-2"
@@ -112,13 +112,13 @@ const Navbar = () => {
             {locale === "en" ? (
               <Link href="/">
                 <a className="pr-3">
-                  <Image height={50} width={210} src={logo} alt="" />
+                  <Image height={40} width={180} src={logo} alt="" />
                 </a>
               </Link>
             ) : (
               <Link href="/">
                 <a className="ml-5">
-                  <Image height={50} width={196} src={logo_ar} alt="" />
+                  <Image height={40} width={176} src={logo_ar} alt="" />
                 </a>
               </Link>
             )}
@@ -174,10 +174,7 @@ const Navbar = () => {
                 <Spinner className="w-10" />
               </div>
             )}
-            {/* <button
-              onClick={() => changelang()}
-              className={`   rounded-full px-4 pb-2 bg-white/20 sm:hidden md:block `}
-            > */}
+          
             {locale === "en" ? (
               <Link href="/ar">
                 <a
@@ -201,7 +198,6 @@ const Navbar = () => {
                 </a>
               </Link>
             )}
-            {/* </button> */}
             <div className=" space-x-3 sm:hidden lg:flex ">
               <Link href={aboutUs.facebook_link}>
                 <a

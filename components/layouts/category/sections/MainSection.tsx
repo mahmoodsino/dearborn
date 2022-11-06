@@ -28,17 +28,7 @@ const MainSection = () => {
 
  
 
-  useEffect(() => {
-    const cat =localStorage.getItem("categry"||"")
-    if(cat!==null)
-    setSelectedCategory(JSON.parse(cat))
-  },[])
 
-  useEffect(() => {
-    if(typeof(query.page) !== "undefined"){
-      setCurrentPage(+(query.page))
-    }
-  },[query.page])
   
 
   useEffect(() => {
@@ -76,6 +66,14 @@ const MainSection = () => {
     );
     setCurrentPage(pageNumber);
   };
+
+  useEffect(() => {
+    if(news.length!==0){
+      setSelectedCategory(news[0].category)
+    }
+  },[news])
+
+
 
   return (
     <div className="mt-[150px] px-2">

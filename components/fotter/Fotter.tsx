@@ -177,7 +177,7 @@ const Fotter = () => {
           <div
             className={`${
               locale === "en" ? "text-left" : "text-right"
-            } col-span-2 px-3`}
+            } col-span-2 px-3 py-5`}
           >
             {locale === "en" ? (
               <span className="block text-lg sm:text-center md:text-left font-bold text-white">
