@@ -54,9 +54,9 @@ const MainSection = () => {
             <div className="lg:w-[67%] md:w-[1005]">
               <div className="leading-tight">
                 <div className="space-x-2">
-                  {post?.categories?.map((item) => {
+                  {post?.categories?.map((item,i) => {
                     return (
-                      <span className="text-sm text-white bg-primary px-2 py-0.5">
+                      <span key={i} className="text-sm text-white bg-primary px-2 py-0.5">
                         {item.name}
                       </span>
                     );
