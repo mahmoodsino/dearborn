@@ -12,6 +12,7 @@ import { ArrowRightCircle } from "../../../icons";
 import { LatsetCard, SmallCard } from "../elemnts";
 import { toast } from "react-toastify";
 import { Spinner } from "../../../spinner";
+import Link from "next/link";
 
 const LatestNews = () => {
   const [categories, setCategories] = useRecoilState(CategoriesAtom);
@@ -50,12 +51,7 @@ const LatestNews = () => {
     setSmallCard(SecoundHalf);
   }, [latestNews]);
 
-  const handelCategory = () => {
-    push({
-      pathname: "/category",
-      query: { category: encodeURI(selectedCategory?.slug) },
-    });
-  }
+  
 
   return (
     <div>
@@ -117,14 +113,17 @@ const LatestNews = () => {
         <Spinner className="w-20 mt-10" />
       )}
       <div className="flex justify-end my-5">
-        <button onClick={() => handelCategory()} className="mt-5 flex space-x-2 items-center hover:text-skyblue ">
-          <ArrowRightCircle className="w-6 " />
-          {locale === "en" ? (
-            <span className="underline  text-lg">See More</span>
-          ) : (
-            <span className="underline  text-lg">المزيد</span>
-          )}
-        </button>
+        <Link href={`/category?category=${selectedCategory?.slug}`}>
+          <a  className="mt-5 flex space-x-2 items-center hover:text-skyblue ">
+            <ArrowRightCircle className="w-6 " />
+            {locale === "en" ? (
+              <span className="underline  text-lg">See More</span>
+            ) : (
+              <span className="underline  text-lg">المزيد</span>
+            )}
+          </a>
+        
+        </Link>
       </div>
     </div>
   );
