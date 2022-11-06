@@ -59,7 +59,7 @@ const HomeSlider = () => {
                                 src={item.post?.img}
                                 alt=""
                               />
-                              <div className="absolute md:top-[70%] sm:top-[40%]  flex  flex-col left-5 z-50 text-left space-y-2">
+                              <div className="absolute md:top-[60%] sm:top-[25%]  flex  flex-col left-5 z-50 text-left space-y-2">
                                 <span className="bg-primary w-fit text-white px-2 block py-0.5 font-medium">
                                   {item.post?.category?.name}
                                 </span>
@@ -91,7 +91,7 @@ const HomeSlider = () => {
                                   src={item.post?.img}
                                   alt=""
                                 />
-                                <div className="absolute top-[40%] flex  flex-col left-5 z-50 text-left space-y-2">
+                                <div className="absolute top-[26%] flex  flex-col left-5 z-50 text-left space-y-2">
                                   <span className="bg-primary w-fit text-white px-2 block py-0.5 font-medium">
                                     {item.post?.category?.name}
                                   </span>
