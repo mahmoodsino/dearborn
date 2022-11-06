@@ -37,7 +37,7 @@ const TodayPicks = () => {
       <div className="flex justify-between border-b-2 border-b-primary">
         <div></div>
         <button className="bg-primary text-white font-medium px-4 py-3 ">
-          {locale==="en" ? <span>TODAY'S PICKS</span> :<span className="font-bold">مختارات اليوم</span>}
+          {locale==="en" ? <span>TODAY,S PICKS</span> :<span className="font-bold">مختارات اليوم</span>}
         </button>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 my-5 px-3 gap-5">

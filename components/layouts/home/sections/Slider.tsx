@@ -45,10 +45,10 @@ const HomeSlider = () => {
               return (
                 <div key={i}>
                   <div className="grid md:grid-cols-2 gap-2 px-0.5">
-                    {slider.items.map((item) => {
+                    {slider.items.map((item,j) => {
                       if (item.position === "l") {
                         return (
-                          <Link href={`/preview?post=${item.post?.slug}`}>
+                          <Link key={j} href={`/preview?post=${item.post?.slug}`}>
                             <a
                               key={item.post?.id}
                               className="md:h-[500px]  sm:h-[244px] relative news-item-1 "
@@ -76,10 +76,10 @@ const HomeSlider = () => {
                       }
                     })}
                     <div className="grid md:grid-rows-2 gap-2">
-                      {slider.items.map((item) => {
+                      {slider.items.map((item ,k) => {
                         if (item.position === "rt") {
                           return (
-                            <Link href={`/preview?post=${item.post?.slug}`}>
+                            <Link key={k} href={`/preview?post=${item.post?.slug}`}>
                               <a
                                 key={item.post?.id}
                                 className=" h-[244px]  relative  news-item-1"
@@ -108,10 +108,10 @@ const HomeSlider = () => {
                         }
                       })}
                       <div className="md:grid grid-cols-2 sm:hidden gap-2">
-                        {slider.items.map((item) => {
+                        {slider.items.map((item,l) => {
                           if (item.position === "rbl") {
                             return (
-                              <Link href={`/preview?post=${item.post?.slug}`}>
+                              <Link key={l} href={`/preview?post=${item.post?.slug}`}>
                                 <a
                                   key={item.post?.id}
                                   className=" h-[244px] relative news-item-1"
@@ -138,10 +138,10 @@ const HomeSlider = () => {
                             );
                           }
                         })}
-                        {slider.items.map((item) => {
+                        {slider.items.map((item,f) => {
                           if (item.position === "rbr") {
                             return (
-                              <Link href={`/preview?post=${item.post?.slug}`}>
+                              <Link key={f} href={`/preview?post=${item.post?.slug}`}>
                                 <a
                                   key={item.post?.id}
                                   className="  h-[244px] relative  news-item-1"
