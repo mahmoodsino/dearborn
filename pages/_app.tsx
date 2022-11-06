@@ -1,3 +1,4 @@
+import React, { ReactNode, useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import { Fotter, Navbar } from "../components";
 import "../helper/locales/i18n";
@@ -19,7 +20,7 @@ import {
   LoadingTwitterAtom,
   LoadingYoutubeAtom,
 } from "../helper";
-import React, { ReactNode, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   children: ReactNode;
@@ -34,6 +35,18 @@ const App = ({ children }: Props) => {
   const [loadingTW, setLoadingTW] = useRecoilState(LoadingTwitterAtom);
   const [laodingYT, setLoadingYT] = useRecoilState(LoadingYoutubeAtom);
   const [laodingIN, setLoadingIN] = useRecoilState(LoadingInstaAtom);
+  const [userToken, setUseToken] = useState("");
+
+  useEffect(() => {
+    const Token = localStorage.getItem("dearbornToken" || "");
+    if (Token !== null) {
+      setUseToken(Token);
+    } else {
+      localStorage.setItem("dearbornToken", uuidv4());
+      console.log(uuidv4());
+      
+    }
+  }, []);
 
   useEffect(() => {
     const getData = async () => {

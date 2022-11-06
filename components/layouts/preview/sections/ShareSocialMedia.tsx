@@ -6,11 +6,8 @@ import { AboutUsAtom } from "../../../../helper";
 
 const ShareSocialMedia = () => {
   const [aboutUs, setAboutUs] = useRecoilState(AboutUsAtom);
-
   const { locale, asPath } = useRouter();
-
   const rootApi = process.env.NEXT_PUBLIC_BASE;
-  console.log(asPath);
 
   return (
     <div className="border-t border-b mt-5 py-8">

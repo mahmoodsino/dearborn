@@ -125,6 +125,7 @@ const Fotter = () => {
           <div className="">
             <form onSubmit={handleSubmit} className="flex justify-center items-center mt-5">
               <input
+              required
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 className=" h-[55px] sm:w-[98%] md:w-[40%] outline-none px-5 "

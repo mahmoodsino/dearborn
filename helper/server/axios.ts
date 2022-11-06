@@ -8,8 +8,10 @@ const appName =process.env.NEXT_PUBLIC_WEPSITE_NAME
 
 export const config = () => {
     let lang
+    let userToken
     if (typeof window !== "undefined") {
         lang=localStorage.getItem("lang")
+        userToken=localStorage.getItem("dearbornToken")
       }
       const size =window.innerWidth
     const config: AxiosRequestConfig = {
@@ -18,6 +20,7 @@ export const config = () => {
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             lang:lang,
+            userToken:userToken
             // appName
         },
     };

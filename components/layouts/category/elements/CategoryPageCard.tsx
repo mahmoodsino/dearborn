@@ -17,7 +17,7 @@ const CategoryPageCard = ({ post }: Props) => {
   return (
     <Link href={`/preview?post=${post?.slug}`}>
       <a
-        className={`text-left w-[100%] ${
+        className={`text-left mb-8 w-[100%] ${
           locale === "en" ? "text-left" : "text-right"
         }`}
       >
