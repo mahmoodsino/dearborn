@@ -13,8 +13,8 @@
 
 @font-face {
   font-family: 'cairo';
-  src: url('../public/assets/static/Cairo-Bold.ttf');
-  src: url('../public/assets/static/Cairo-Medium.ttf');
+  src: url('../assets/static/Cairo-Bold.ttf');
+  src: url('../assets/static/Cairo-Medium.ttf');
   font-weight: 400;
   font-style: normal;
   }
