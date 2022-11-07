@@ -6,11 +6,11 @@
 
 @font-face {
   font-family: "GE SS TWO";
-  src: url("./GESSTwoBold.otf");
+  src: url("../public/assets/GESSTwoBold.otf");
 }
 
 * {
-  font-family: 'Roboto', 'GE SS TWO';
+  font-family: 'Roboto', 'GE SS TWO' !important;
 }
 
 /* body{
@@ -53,11 +53,12 @@
   height: 100%;
   margin: auto;
 }
+
 @media screen and (max-width: 1150px) {
   .video-Modal {
     padding-top: 70%;
   }
-  
+
   .video-Modal iframe {
     top: 50px;
   }
@@ -68,7 +69,7 @@
   .video-Modal {
     padding-top: 70%;
   }
-  
+
   .video-Modal iframe {
     top: 270px;
   }
