@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "GE SS TWO";
-  src: url("../public/GESSTwoBold.otf");
+  src: url("./GESSTwoBold.otf");
 }
 
 * {
