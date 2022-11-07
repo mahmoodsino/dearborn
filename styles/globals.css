@@ -6,28 +6,14 @@
 
 @font-face {
   font-family: "GE SS TWO";
-  src: url("../public/assets/GESSTwoBold.otf");
+  src: url("../assets/GESSTwoBold.otf");
   font-style: normal;
 
 }
-
-@font-face {
-  font-family: 'cairo';
-  src: url('../assets/static/Cairo-Bold.ttf');
-  src: url('../assets/static/Cairo-Medium.ttf');
-  font-weight: 400;
-  font-style: normal;
-  }
 
 * {
-  font-family: 'Roboto', 'cairo' !important;
+  font-family: 'Roboto', 'GE SS TWO' !important;
 }
-
-/* body{
-  font-family: "Roboto" !important;
-  font-family: "GE SS Two";
-} */
-
 
 .video-box {
   width: 100%;
