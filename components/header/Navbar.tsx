@@ -176,7 +176,7 @@ const Navbar = () => {
             )}
           
             {locale === "en" ? (
-              <Link href="/ar">
+              <Link href="">
                 <a
                   onClick={() => changelang()}
                   className="rounded-full px-4 pb-2 bg-white/20 sm:hidden md:block"
