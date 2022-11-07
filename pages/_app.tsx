@@ -103,7 +103,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <div className={`${locale==="en" ? "font-Roboto" : "font-Gesstwo"}`}>
+    <div >
       <RecoilRoot>
         <App>
           <Navbar />
