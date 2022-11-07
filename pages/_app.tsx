@@ -107,7 +107,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <App>
           <Navbar />
-          <div className="2xl:container sm:px-3 lg:px-40 2xl:px-56 mx-auto font-Roboto min-h-[60vh]">
+          <div className="2xl:container sm:px-3 lg:px-40 2xl:px-56 mx-auto min-h-[60vh]">
             <Component {...pageProps} />
           </div>
           <Sidbar />
