@@ -20,8 +20,8 @@ export const config = () => {
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             lang:lang,
-            userToken:userToken
-            // appName
+            userToken:userToken,
+            "news-location":appName
         },
     };
     return config;

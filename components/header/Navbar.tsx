@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import logo from "../../public/assets/images/logo.png";
+import logo_bint from "../../public/assets/images/logo_bint.png";
 import {
   BurgerIcon,
   FacebookIcon,
@@ -48,6 +49,9 @@ interface props {
   wind: { speed: number; deg: number };
 }
 
+const appName =process.env.NEXT_PUBLIC_WEPSITE_NAME
+
+
 const Navbar = () => {
   const { pathname } = useRouter();
   let { locale } = useRouter();
@@ -55,6 +59,7 @@ const Navbar = () => {
   const [wether, setWeather] = useState<props>({} as props);
   const [loading, setLoading] = useState(false);
   const [aboutUs, setAboutUs] = useRecoilState(AboutUsAtom);
+
 
   let Home = locale === "en" ? "Home" : "الرئيسيه";
   let Exclusive = locale === "en" ? "Exclusive" : "حصري";
@@ -110,17 +115,34 @@ const Navbar = () => {
               <BurgerIcon className="w-10" />
             </button>
             {locale === "en" ? (
+              appName ==="dearborn" ?
               <Link href="/">
                 <a className="pr-3">
                   <Image height={40} width={180} src={logo} alt="" />
                 </a>
+              </Link> : 
+              <Link href="/">
+                <a className="pr-3">
+                  <Image height={50} width={170} src={logo_bint} alt="" />
+                </a>
               </Link>
+
             ) : (
+              appName ==="dearborn" ?
               <Link href="/">
                 <a className="ml-5">
                   <Image height={40} width={176} src={logo_ar} alt="" />
                 </a>
               </Link>
+              :
+              <div className="ml-5">
+              <Link href="/">
+                <a className="pr-3">
+                  <Image height={50} width={170} src={logo_bint} alt="" />
+                </a>
+              </Link>
+
+              </div>
             )}
             {routse.map((router, i) => {
               return (
@@ -153,27 +175,31 @@ const Navbar = () => {
               locale === "en" && "space-x-5"
             }  items-center `}
           >
+            {appName === "dearborn" && 
+            <div>
             {!loading ? (
               <span
-                className={`text-sm sm:mr-5  flex space-x-1 items-center ${
-                  locale === "en" ? " md:mr-5" : "md:ml-7"
-                }   lg:w-[95.5px] ml-4 ${locale === "ar" && "ml-5"}`}
+              className={`text-sm sm:mr-5  flex space-x-1 items-center ${
+                locale === "en" ? " md:mr-5" : "md:ml-7"
+              }   lg:w-[95.5px] ml-4 ${locale === "ar" && "ml-5"}`}
               >
                 <span className="sm:hidden md:block">Dearborn</span>
                 <span>{(wether?.main?.temp * 1.8 + 32).toFixed()} °F</span>
                 {wether.weather && (
                   <img
-                    className="w-8"
-                    src={`https://openweathermap.org/img/w/${wether?.weather[0]?.icon}.png`}
-                    alt=""
+                  className="w-8"
+                  src={`https://openweathermap.org/img/w/${wether?.weather[0]?.icon}.png`}
+                  alt=""
                   />
-                )}
+                  )}
               </span>
             ) : (
               <div className="left-0 right-0 w-[95.5px] ml-4 mx-auto">
                 <Spinner className="w-10" />
               </div>
             )}
+            </div>
+            }
           
             {locale === "en" ? (
               <Link href="">

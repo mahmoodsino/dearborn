@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { atom, useRecoilState } from "recoil";
 import {
+  CategoriesAtom,
   CategoriesType,
   getNewsOfCategory,
   MostReadAtom,
@@ -14,7 +15,6 @@ import { SmallCard } from "../../home/elemnts";
 import CategoryPageCard from "../elements/CategoryPageCard";
 import Paginations from "./Paginations";
 
-
 const MainSection = () => {
   const { locale,replace } = useRouter();
   const [mostRead, setMostRead] = useRecoilState(MostReadAtom);
@@ -24,12 +24,8 @@ const MainSection = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useRecoilState(selectedCAtegoryAtom)
+  const [categories, setCategories] = useRecoilState(CategoriesAtom);
 
-
- 
-
-
-  
 
   useEffect(() => {
     setLoading(true);
@@ -68,10 +64,12 @@ const MainSection = () => {
   };
 
   useEffect(() => {
-    if(news.length!==0){
-      setSelectedCategory(news[0].category)
-    }
-  },[news])
+    categories.map(item => {
+      if(item.slug===query.category){
+        setSelectedCategory(item)
+      }
+    })
+  },[categories,query.category])
 
 
 

@@ -18,6 +18,10 @@ import { toast } from "react-toastify";
 import Link from "next/link";
 import { selectedCAtegoryAtom } from "../header/Categories";
 import { Spinner } from "../spinner";
+import logo_bint from "../../public/assets/images/logo_bint.png";
+
+const appName =process.env.NEXT_PUBLIC_WEPSITE_NAME
+
 
 const Fotter = () => {
   const { locale } = useRouter();
@@ -167,13 +171,22 @@ const Fotter = () => {
 
         <div className="py-8 sm:flex sm:flex-col sm:justify-center sm:items-center md:grid md:grid-cols-4">
           {locale === "en" ? (
+            appName === "dearborn" ?
             <div>
               <Image height={50} width={196} src={logo} alt="" />
-            </div>
+            </div> :
+            <div>
+            <Image height={50} width={196} src={logo_bint} alt="" />
+          </div> 
           ) : (
+            appName ==="dearborn" ? 
+
             <div>
               <Image height={50} width={196} src={logo_ar} alt="" />
-            </div>
+            </div>:
+            <div>
+            <Image height={50} width={196} src={logo_bint} alt="" />
+          </div>
           )}
           <div
             className={`${
