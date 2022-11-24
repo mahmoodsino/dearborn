@@ -14,14 +14,14 @@ interface Props {
 const ExlusiveSecoundaryCard = ({posts}:Props) => {
   const [exclusivePageReborts,setExclusivePageReborts]=useRecoilState(ExclusevpageRepotrtAtom)
   const [openYoutubeModal,setOpenYoutubeModal]=useRecoilState(YoutubeModaAtom)
-
+  
 
   const {locale}=useRouter()
   return (
     <button onClick={() => (setExclusivePageReborts(posts?.video),setOpenYoutubeModal(true))} className={` w-[100%] flex flex-col ${locale === "en" ? "text-left" : "text-right"}`}>
       <div className="relative w-fit">
         <img
-          className="l"
+          className="lg:w-[335px] h-[223px]"
           style={{ objectFit: "cover" }}
           src={posts?.img}
           alt=""

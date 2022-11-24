@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { useRecoilState } from "recoil";
 import { NewsCardType } from "../../../../helper";
-import { selectedCAtegoryAtom } from "../../../header/Categories";
 
 interface Props {
   post: NewsCardType;
@@ -11,8 +9,6 @@ interface Props {
 
 const CategoryPageCard = ({ post }: Props) => {
   const { locale } = useRouter();
-  const { push } = useRouter();
-  const [selectedCategory, setSelectedCategory] = useRecoilState(selectedCAtegoryAtom)
 
   return (
     <Link href={`/preview?post=${post?.slug}`}>
@@ -25,7 +21,7 @@ const CategoryPageCard = ({ post }: Props) => {
           <img
             className="lg:h-[250px]"
             style={{ objectFit: "cover" }}
-            src={post?.img}
+            src={post?.img ?  post.img : "/alternative.png"}
             alt=""
           />
           <span className={`bottom-0 absolute sm:text-xs md:text-base bg-primary  text-white px-2 z-50 py-1 text-lg whitespace-nowrap `}>
