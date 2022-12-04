@@ -176,7 +176,7 @@ const Fotter = () => {
               <Image height={50} width={196} src={logo} alt="" />
             </div> :
             <div>
-            <Image height={50} width={196} src={logo_bint} alt="" />
+            <Image height={60} width={196} src={logo_bint} alt="" />
           </div> 
           ) : (
             appName ==="dearborn" ? 
@@ -185,7 +185,7 @@ const Fotter = () => {
               <Image height={50} width={196} src={logo_ar} alt="" />
             </div>:
             <div>
-            <Image height={50} width={196} src={logo_bint} alt="" />
+            <Image height={60} width={196} src={logo_bint} alt="" />
           </div>
           )}
           <div

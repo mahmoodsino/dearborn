@@ -9,6 +9,11 @@ import { useRouter } from "next/router";
 import LbnIcon from "../icons/LbnIcon";
 import UsaIcon from "../icons/UsaIcon";
 import logo_ar from "../../public/assets/images/logo-ar.png";
+import logo_bint from "../../public/assets/images/logo_bint.png";
+
+
+const appName =process.env.NEXT_PUBLIC_WEPSITE_NAME
+
 
 const Sidbar = () => {
   const [openSidebar, setOpenSidebar] = useRecoilState(OpenSidebarAtom);
@@ -48,19 +53,36 @@ const Sidbar = () => {
               </button>
             </div>
             <div className="flex justify-center pb-3">
-              {locale === "en" ? (
-                <Link href="/">
-                  <a className="pr-3">
-                    <Image height={40} width={160} src={logo} alt="" />
-                  </a>
-                </Link>
-              ) : (
-                <Link href="/">
-                  <a className="ml-5">
-                    <Image height={40} width={176} src={logo_ar} alt="" />
-                  </a>
-                </Link>
-              )}
+            {locale === "en" ? (
+              appName ==="dearborn" ?
+              <Link href="/">
+                <a className="pr-3">
+                  <Image height={40} width={160} src={logo} alt="" />
+                </a>
+              </Link> : 
+              <Link href="/">
+                <a className="pr-3">
+                  <Image height={50} width={160} src={logo_bint} alt="" />
+                </a>
+              </Link>
+
+            ) : (
+              appName ==="dearborn" ?
+              <Link href="/">
+                <a className="ml-5">
+                  <Image height={40} width={176} src={logo_ar} alt="" />
+                </a>
+              </Link>
+              :
+              <div className="ml-5">
+              <Link href="/">
+                <a className="pr-3">
+                  <Image height={50} width={160} src={logo_bint} alt="" />
+                </a>
+              </Link>
+
+              </div>
+            )}
             </div>
           </div>
 

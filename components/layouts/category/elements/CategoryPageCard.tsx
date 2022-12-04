@@ -19,7 +19,7 @@ const CategoryPageCard = ({ post }: Props) => {
       >
         <div className="relative w-fit">
           <img
-            className="lg:h-[250px]"
+            className=" lg:w-[335px] h-[250px]"
             style={{ objectFit: "cover" }}
             src={post?.img ?  post.img : "/alternative.png"}
             alt=""
