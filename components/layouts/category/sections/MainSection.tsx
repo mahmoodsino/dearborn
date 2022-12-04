@@ -62,6 +62,9 @@ const MainSection = () => {
     );
     setCurrentPage(pageNumber);
   };
+  useEffect(()=>{
+    setCurrentPage(1)
+  },[query.category])
 
   useEffect(() => {
     categories.map(item => {
